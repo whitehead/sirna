@@ -62,29 +62,35 @@ register.php
 	Reply-To: admin@domain.com
 
 
-### Make symbolic links to the following /cgi-bin/ folders:
-
-Attribute
-
-Email
-
-Database.pm
-
-File
-
-JobStatus.pm
-
-Log
-
-Mail
-
-Params
-
-Sort.pm
+### Make symbolic links:
 
 
-### Others:
+**Link to /cgi-bin/ folders:**
 
-tmp folder -directories created for each search
+    ln -s /cgi-bin/siRNAext/lib/Attribute
 
-link home.php to index.php
+    ln -s /cgi-bin/siRNAext/lib/Email/
+
+    ln -s /cgi-bin/siRNAext/lib/Database.pm
+
+    ln -s /cgi-bin/siRNAext/lib/File
+
+    ln -s /cgi-bin/siRNAext/lib/JobStatus.pm
+
+    ln -s /cgi-bin/siRNAext/lib/Log
+
+    ln -s /cgi-bin/siRNAext/lib/Mail
+
+    ln -s /cgi-bin/siRNAext/lib/Params
+
+    ln -s /cgi-bin/siRNAext/lib/Sort.pm
+
+**Link home.php with index.php**
+
+    ln -s  home.php index.php
+
+
+### Create tmp directory to store files for each search
+
+    mkdir tmp
+
