@@ -1,0 +1,229 @@
+<html>
+<head>
+<title>FAQ</title>
+<style type="text/css">
+<!--
+p#big   { color: #996633; font-size:14pt; font-weight:bold }
+b#title { color: #000080; font-size:12pt }
+-->
+</style>
+</head>
+<body>
+<p id=big align="center">Frequent Asked Questions</p>
+
+<UL>
+    <b id=title>
+    <li><a href="#code">How can I get an Authentication Code?</a></li>
+    <li><a href="#login">How can I login with the Authentication Code?</a></li>
+    <li><a href="#design">How can I select functional siRNAs?</a></li>
+    <li><a href="#seq">How can I select siRNAs for a gene family? I'd like to knock down a region of my target sequence that has high similarity between human and mouse, how should I do it?</a></li>
+    <li><a href="#pattern">Which pattern should I choose?</a></li>
+    <li><a href="ending.html">Why I got error on my custom pattern? What is 'End your siRNA with TT/UU/dNdN/NN'?</a></li>
+    <li><a href="#offtarget">Why do I need to filter siRNAs by BLAST?</a></li>
+    <li><a href="#blast">How do you BLAST the siRNAs</a></li>
+    <!--<li><a href="#blast">Which BLAST should I choose: WU BLAST or NCBI BLAST</a></li> -->
+    <li><a href="#blastdiff">Why are there more BLAST hits for my siRNA in the release on Jan. 30 2004 ?</a></li>
+    <li><a href="#identity">How does the program filter the siRNAs by number of matches?</a></li>
+    <li><a href="#position">How does the program filter the siRNAs by positions?</a></li>
+    <li><a href="#geneID">How can I get GeneID or Ensembl Gene ID?</a></li>
+    </b>
+
+</UL>
+<hr />
+
+<UL>
+    <li>
+        <a name="code"><b id=title>How can I get an Authentication Code?</b></a><p>
+	<p>After you have registered at our website, an email message with your Authentication Code will be sent to you.</p></li>
+	<p />
+    </li>
+    <li>
+        <a name="login"><b id=title>How can I login with the Authentication Code?</b></a><p>
+	<p>When you receive your authentication code in your registration confirmation email:
+	<ol>
+	<li>Go to /siRNAext.</li>
+	<li>Login using the username and password you selected upon registration.</li>
+	<li>You will be prompted for your authentication code. Enter the code that was sent to you in the registration confirmation email.</li>
+	<li>Upon successful authentication, you will need to use your username and password to login to gain full access to the siRNA tool.</li>
+	</ol>
+	<p />
+    </li>
+    
+
+    <li>
+        <a name="pattern"><b id=title>Which pattern should I choose?</b></a>
+	The pattern is relative to a target sequence or mRNA from your target ID. It includes 2 nucleotides overhang on each end of 19mer. The nucleotides in positions 3-21 plus <a href="ending.html">the chosen 'end'</a> makes the sense siRNA, and reverse-compliment of positions 3-21 plus <a href="ending.html">the chosen 'end'</a> is antisense siRNA.
+	<br />
+	<dt>The pattern from <a href="http://www.ncbi.nlm.nih.gov/pubmed/16929310?ordinalpos=5&itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_RVDocSum">Pei and Tuschl</a>:</dt>
+	
+	     <dd><b>N2[CG]N8[AUT]N8[AUT]N2</b> includes
+	        <br><font -1>U/A at position 1, A/U at position 10 and C/G at position 19 in a guide strand(antisense strand).</font></dd>
+
+        <dt>The patterns suggested by <a href="http://www.rockefeller.edu/labheads/tuschl/sirna.html">Tom Tuschl's website</a>:</dt>
+	
+	     <dd><b>AAN19TT</b></dd>
+	     <dd><b>NAN21</b></dd>
+	
+	<dt>The pattern from <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=14758366&dopt=Abstract"> Reynolds <i>et.al</i> 2004</a>:</dt>
+	<dd><b>N4AN6TN2HN5WN2</b></dd>
+
+	<dt>The pattern from <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=14769950">Ui-Tei <i>et.al</i> 2004</a>:</dt>
+	<dd><b>N2SN17WN2</b></dd>
+	</li>
+	<p />
+     </li>
+     
+
+     <li>
+        <a name="seq"><b id=title>How can I select siRNAs for a gene family? I'd like to knock down a region of my target sequence that has high similarity between human and mouse. How can I do this?</b></a>
+        <dt>First, align all sequences in your gene family using the <a href="http://pir.georgetown.edu/pirwww/search/multaln.html">PIR website</a> at Georgetown University.
+	<dt>Then, there are two ways to run our siRNA selection program:
+	    <ol>
+	      <li>Input your target accession/gi number. In the result page, add all the sequence identifiers from NCBI Gene ID/Ensembl genes (separating them by";"). When you select siRNAs, choose the ones that are in the conserved region.</li>
+	      <li>Input the conserved region of your target sequence. On the result page, add all the sequence identifiers from NCBI Gene ID/Ensembl genes (separating them by";"). Adjust the positions for the selected siRNAs to the original target sequence.</li>
+	    </ol> 
+
+     <p />
+     </li>
+ 
+    <li>  
+        <a name="design"><b id=title>How can I select functional siRNAs?</b></a>
+	
+	<p>The original design rules were published by <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=11157775">Elbashir <i>et.al</i> 2001</a>. Since then, the discovery of the asymmetric binding to RISC (favoring antisense strand) by <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?holding=npg&cmd=Retrieve&db=PubMed&list_uids=14567917&dopt=Abstract">Schwarz <i>et.al</i> 2003</a> and <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?holding=npg&cmd=Retrieve&db=PubMed&list_uids=14567918&dopt=Abstract">Khvorova <i>et.al</i> 2003</a> greatly improves the success rate of predicting effective siRNAs. Our website calculates the binding energies for both sense and antisense siRNAs and displays the result in the format: (difference of 5' end sense energy and 5' end antisense energy) (5' end sense energy, 5' end antisense energy). Although our website doesn't filter any siRNAs by energy, selecting siRNAs with positive energy difference is not recommended. Because there could be a threshold beyond which a siRNA is unusable, it's better to avoid a super stable end. A siRNA with one stable end and one super stable end might not be as good as one with one end much less stable and the other is a bit more stable.
+	<p />
+
+	References for popular rules:
+	<ol>
+	    <li><dt>The pattern from <a href="http://www.ncbi.nlm.nih.gov/pubmed/16929310?ordinalpos=5&itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_RVDocSum">Pei and Tuschl</a>:</dt>
+	
+	     <dd><b>N2[CG]N8[AUT]N8[AUT]N2</b> includes
+	        <br><font -1>U/A at position 1, A/U at position 10 and C/G at position 19 in a guide strand(antisense strand).</font></dd>
+
+        <dt>The patterns from <a href="http://www.rockefeller.edu/labheads/tuschl/sirna.html">Tom Tuschl's website</a>:</dt>
+	
+	     <dd><b>AAN19TT</b></dd>
+	     <dd><b>NAN21</b></dd>
+            </li>
+	    <li><a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=14758366">Reynolds <i>et.al</i> 2004</a></li>. The pattern for this paper: N4AN6TN2HN5WN2
+	    <li><a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=14769947">Hsieh <i>et.al</i> 2004</a></li>
+	    <li><a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=14769950">Ui-Tei <i>et.al</i> 2004</a></li>. The pattern for this paper: N2SN17WN2
+
+	 </ol>	   
+	 <p />
+
+	 Please click <a href="#offtarget">here</a> on the specificity of the siRNAs
+	 <p />
+
+    </li>
+    
+
+    <li>
+    <a name="blastdiff"><b id=title>Why are there more BLAST hits for my siRNA in the new release (Jan. 30 2004)?</b></a>
+
+    <p>We have updated the BLAST parameters and reduced the threshold in the step for parsing the BLAST results:
+       <ol>
+           <li>The mismatch penalty is changed to -1 to pick up more close hits.</li>
+	   <li>We used to only keep the targets with 4 or less gaps plus mismatches. Now, all the targets with more than 12 identities are includes in the BLAST results.</li>
+       </ol>
+ 	
+    </li>
+
+    <p>
+
+    <li>
+    <a name="blast"><b id=title>How do you BLAST the siRNAs?</b></a>
+    <p>Only positions 2 to 19 of the antisense siRNA are used for BLAST.
+    <br><a href="http://www.ncbi.nlm.nih.gov/BLAST">NCBI BLAST</a> is used for aligning sequences.
+    <br>For BLAST databases, our NCBI <a href="http://www.ncbi.nlm.nih.gov/RefSeq">RefSeq databases</a> are updated weekly, and <a href="http://www.ensembl.org">Ensembl</a> transcript databases are updated monthly.
+    <br> The BLAST results are reformatted in a table, which can be accessed through the "LINK" in the result page.
+    <br>For each siRNA, its BLAST database hits are sorted by number of matches (identity) in decreasing order.
+    </li>
+
+  <!--
+    <p>
+
+    <li><b id=title>Which BLAST should I choose: WU BLAST or NCBI BLAST?</b>
+    <p>NCBI BLAST (word size 7), is about 10 times faster than <a href="http://blast.wustl.edu/blast">WU BLAST</a> (word size 1). Because of the time issue, your results are sent through email if you choose WU BLAST.
+    <p>WU BLAST is more sensitive than NCBI BLAST. Because the minimum word size for NCBI BLAST is 7, it requires that the shortest perfect aligned piece should be no less than 7. For example, it can't align the sequences with 5 matches, 1 mismatch, 6 matches, 1 mismatch, and 5 matches.
+    </li>
+
+    <p>
+
+    -->
+    <li>
+    <a name="offtarget"><b id=title>How can I filter the potential off-targets with the BLAST results?</b></a>
+	<p>The following rules are suggested by <a href="http://www.ncbi.nlm.nih.gov/pubmed/16929310?ordinalpos=5&itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_RVDocSum">Pei and Tuschl</a>
+	  <ol>
+	     <li>Typically at least 3 mismatches are recommended, which is 15 in our website(18-3=15). </li>
+	    <li>The mismatches near the 5'end and in the center of strand is more important. In our website, for the ansisense strand, you can uncheck the boxes at the right end.</li>
+	  </ol>
+
+<!--
+    <p>Here are some published papers regarding this aspect: 
+
+       <ol>
+         <li>Off-target cleavage activity can occur with only 11 contiguous matches (<a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=12754523">Jackson et al. 2003</a>) </li>
+	 <li>Reducing the possibility of cross-hybridization by minimizing the length of the homology region with the off-target match (<=15 nt) and maximizing the Tm differential between the desired target silencing complex and the most likely non-specific complex. (<a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=12746500">Semizarov et al. 2003</a>) </li>
+	 <li>siRNA can function as miRNA (<a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=12600936">Doench et al. 2003</a>) </li>
+          <li>The center 13 nt are required for RISC-guided cleavage (<a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=15105377">Martinez J. and Tuschl T 2004</a>) </li>
+      </ol>	     
+
+-->
+    </li>
+    <p>
+
+     <li>
+     <a name="identity"><b id=title>How does the program filter the siRNAs by number of matches?</b></a>
+     <p>For a siRNA, if any of its BLAST database hits meet all the following conditions, this siRNA will be filtered out.
+     <ol>
+          <li>A hit's identity (number of matches) is more than the number of matches input by the user.</li>
+	  <li>This hit's sequence identifier from NCBI GeneID or Ensembl gene (respectively to RefSeq and Ensembl databases selected by the user) is different from that of the user's target gene. If there are multiple identifiers from NCBI GeneID/Ensembl genes (separated by ";" in the box above the siRNA result table) for a target gene, this hit's sequence identifier from NCBI GeneID/Ensembl gene is different from any one of them. If the RefSeq database is selected for BLASTing, only the BLAST hits whose accession number begins with NM are used for filtering. If the Ensembl transcript database is selected for BLASTing, the BLAST hits that are categorized as pseudogenes are not used for filtering.</li>
+     </ol>
+     </li>
+
+     <p>
+
+     <li>
+     <a name="position"><b id=title>How does the program filter the siRNAs by positions?</b></a>
+     <p>For a siRNA, if any of its BLAST database hits meet all the following conditions, this siRNA will be filtered out.
+     <ol>
+          <li>The aligned query positions in a database hit have at least the same positions selected by a user</li>
+	  <li>This hit's sequence identifier from NCBI GeneID or Ensembl gene ID is different from that of the user's target gene. If there are multiple identifiers from NCBI GeneID/Ensembl genes (separated by ";" in the box above the siRNA result table) for a target gene, this hit's sequence identifier from NCBI GeneID/Ensembl gene is different from any one of them. If the RefSeq database is selected for BLASTing, only the BLAST hits whose accession numbers begin with NM are used for filtering. If the Ensembl transcript database is selected for BLASTing, the BLAST hits that are categorized as pseudogenes are not used for filtering. </li>
+     </ol>
+     </li>
+     <p>
+
+    
+     <li>
+     <a name="geneID"><b id=title>How can I get GeneID or Ensembl Gene ID?</b></a>
+     <ul>
+          <li>GeneID:
+	      <ul>
+	          <li>You can find the "GeneID" from the <a href="http://www.ncbi.nih.gov/entrez/query.fcgi?db=gene" target="new">NCBI entrez_gene home page</a> by putting your target sequence's <a href="gi_acc.html">accession, gi number</a>, symbol, or description in the search box and click the "go" button.</li>
+		  <li>You can also get the "GeneID" by BLASTing your target sequence. Select your desired organism on the <a href="http://www.ncbi.nlm.nih.gov/BLAST" target="new">NCBI BLAST</a>. In the next page, paste your target sequence, and select "Refseq RNA" database. In the result page, click on dark blue "G" buttons.</li> 
+	      </ul>
+          </li>
+	<!--
+	  <li>UniGene Cluster:
+	      <ul>
+	          <li>You can find the "UniGene Cluster" from the <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=unigene" target="new">NCBI UniGene home page</a> by putting your target sequence's <a href="gi_acc.html">accession, gi number</a>, symbol or description in the box next to "for", and click the "go" button.</li>
+		  <li>You can also get the UniGene Cluster by BLASTing your target sequence. Select your desired organism on the <a href="http://www.ncbi.nlm.nih.gov/BLAST" target="new">NCBI BLAST</a>. In the next page, paste your target sequence, and select "Refseq RNA" database. In the result page, click on light blue "U" buttons.</li> 
+	      </ul>
+	  </li>
+	-->
+	  <li>Ensembl Gene ID:
+	       <ul>
+	       	 <li>Go to the <a href="http://www.ensembl.org/"  target="new">Ensembl home page</a>, select the species. In the next page, fill in the box next to "search" with your target sequence's symbol, description or <a href="gi_acc.html">accession ID</a>, and click the "Go" button.</li>
+		 <li>You can also get the Ensembl Gene by BLASTing your target sequence. On the <a href="http://www.ensembl.org/Multi/blastview" target="new">Ensembl BLAST page</a>, paste your target sequence, select species in the box next to "Select species", select "cDNAs" in the line beginning with "dna database", and click on "RUN" button. </li>
+	       </ul>
+
+	  </li>
+
+	  <p>If you input the target sequence in <a href="gi_acc.html">accession/gi number</a> format, the program will search our local databases to find its corresponding identifier from GeneID/Ensembl Gene. If the program couldn't find the corresponding identifier, this box will be empty. Because of the different annotation systems between NCBI and Ensembl, there could be no corresponding Ensembl Gene for an NCBI <a href="gi_acc.html">accession/gi number</a>. Sometimes, there could be multiple Ensembl Genes for a NCBI <a href="gi_acc.html">accession/gi number</a>. Multiple identifiers from GeneIDs/Ensembl Genes are separated by ";". You can also find out the identifier from GeneID/Ensembl Gene for any hits in the BLAST result by following its link. You can add additional identifiers from GeneID/Ensembl Gene to the box, if you think it also belongs to your target gene.
+	  
+     </ul>
+
+
+</UL>
+</body>
+</html>

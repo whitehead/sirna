@@ -1,0 +1,39 @@
+<HTML>
+<HEAD>
+</HEAD>
+<TITLE> oligo pattern description </TITLE>
+<BODY bgcolor="FFFFFF" link="0000FF" vlink="ff0000" text="000000" >  
+<h2 align=center>How to describe your oligo pattern?</h2>
+<ul>
+<li><a href="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html" target="IUB">NC-IUB nucleic acid codes</a> are accepted. </li>
+<pre>
+A --> adenosine      K --> G T (keto)          B --> C G T        N --> A G C T (any)
+C --> cytidine       M --> A C (amino)         D --> A G T
+G --> guanine        R --> A G (purine)        H --> A C T
+T --> thymidine      S --> C G (strong)        V --> A C G
+                     W --> A T (weak)
+                     Y --> C T (pyrimidine)
+</pre>
+
+<li>Ambiguities can also be indicated by listing the acceptable nucleotides for a given position, between square parentheses `[ ]'. For example: [TC] stands for T or C.</li>
+<li>Repetition of an element of the pattern can be indicated by following that element with a numerical value.</li>
+</ul>
+<pre>
+Examples:
+
+GCN19[CT]2
+<dd>This searches for GC,</dd>
+<dd>followed by any 19 bases,</dd> 
+<dd>then by "C" or "T" 2 times.</dd>
+
+N4AN6TN2HN5WN2
+<dd>This searches for A at position 5,</dd>
+<dd>and T or U at position 12,</dd>
+<dd>and a base other than G at position 15,</dd>
+<dd>and A or T or U at position 21.</dd>
+
+<pre>
+</BODY>
+</HTML>
+
+

@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>
+example
+</title>
+</head>
+<body>
+<h3 align="center">Example for filtering siRNAs by positions in BLAST results</h3>
+
+For accession number NM_032935, the following table shows the first part of one of its siRNAs' BLAST results.
+<p><img src="filter_by_pos.jpg" /><p>
+
+
+If positions 2,3,4,5,6,7,8,9,10,11,12,13,14,15 are checked, then any off-target BLAST hits aligning with its antisense strand for the specified positions, will be filtered out. A hit has to meet the following two conditions: 1. its aligned positions in the BLAST result table have to include the selected positions. 2. The hit has to be "off-target", which means its GeneID has to be different from that of the target. The target NM_032935's GeneID, 84560, is located in the top box of the result page. In order to filter a siRNA, both criteria have to be satisfied.<br> 
+The program checks the above BLAST result as follow: <br>
+The first BLAST hit in the table is NM_000016. It meets the first criteria: Its alignment is 2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19. These aligned positions including the checked positions input by the user (2,3,4,5,6,7,8,9,10,11,12,13,14,15). This hit is ignored because it has the same GeneID as the target gene: 84560. So, the program continues to check for the next BLAST hit.<br>
+The second BLAST hit in the table is NR_003149. Because the program only checks the hits whose accession numbers start with NM (better quality), this hit is ignored. So, the program continues to check for the next BLAST hit.<br>
+The third BLAST hit in the table is NM_032119. It does not meets the first criteria because it does not aligned with position 12. <br />
+The following BLAST hits NM_012224, NM_024776, NM_178819, NM_002264 all failed to meet the first criteria. <br />
+The BLAST hit NM_001002292 with the aligned positions (2,3,4,5,6,7,8,9,10,11,12,13,14,15,16), meets the first criteria. In another word, aligned positions including the specified positions input by the user(2,3,4,5,6,7,8,9,10,11,12,13,14,15). The GeneID for NM_001002292 is 79971, which is different from the target (84560). So this hit satisfies the second condition. Because it meets both conditions, this siRNA is filtered out.
+<p />
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>
+ending
+</title>
+</head>
+<body>
+<h3 align="center">What is 'End your siRNA with TT/UU/dNdN/NN ' ?</h3>
+For each 23mer with the your pattern, 21mer sense is the string from positions 3 to 23, whereas the 21mer antisense is the string from reverse complement of positions 1 to 21. The "End" refers to the last 2 nucleotides at the 3'end of both the sense and antisense 21mer.<br/>
+First, all the 21mers are converted to RNAs and the 2 nucleotides at the 3'end of 21mers are replaced by your choice. If you choose NN, the original 2 nucleotides are kept intact. e.g.:
+
+<ol>
+If your 23mer is <font color='blue'>GA</font>AGCAAGAGGATTGCATTCA<font color='blue'>GC</font>
+<p/>
+
+<li>If you choose "End siRNA with <font color='blue'>TT</font>":</li>
+<pre>
+ 21mer sense:     5' AGCAAGAGGAUUGCAUUCA<font color='blue'>dTdT</font>
+ 21mer antisense: 5' UGAAUGCAAUCCUCUUGCU<font color='blue'>dTdT</font>
+</pre>
+
+<li>If you choose "End siRNA with <font color='blue'>UU</font>":</li>
+<pre>
+ 21mer sense:     5' AGCAAGAGGAUUGCAUUCA<font color='blue'>UU</font>
+ 21mer antisense: 5' UGAAUGCAAUCCUCUUGCU<font color='blue'>UU</font>
+</pre>
+
+<li>If you choose "End siRNA with <font color='blue'>dNdN</font>":</li>
+<pre>
+ 21mer sense:     5' AGCAAGAGGAUUGCAUUCA<font color='blue'>dGdC</font> 
+ 21mer antisense: 5' UGAAUGCAAUCCUCUUGCU<font color='blue'>dUdC</font>
+</pre>
+
+<li>If you choose "End siRNA with <font color='blue'>NN</font>":</li>
+<pre>
+ 21mer sense:     5' AGCAAGAGGAUUGCAUUCA<font color='blue'>GC</font>
+ 21mer antisense: 5' UGAAUGCAAUCCUCUUGCU<font color='blue'>UC</font>
+</pre>
+
+</ol>
+  
+</body>
+</html>

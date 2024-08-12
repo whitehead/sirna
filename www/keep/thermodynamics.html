@@ -1,0 +1,17 @@
+<html>
+<head>
+<title>
+Energy
+</title>
+</head>
+<body>
+<h3 align="center">Thermodynamic Values</h3>
+
+<p>Thermodynamic values for each siRNA are calculated based on the papers published by <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=14567917&dopt=Abstract" target="new">Schwartz, <i>et.al</i></a> and by <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=14567918&dopt=Abstract" target="new"> Khvorova <i>et.al.</i></a>. For each siRNA, two model helixes are made from ends of sense and antisense strands. Each model is made of 5 bases on the 5' end and 7 bases on the 3' end. For each model, thermodynamic parameters* for 4 nearest-neighbors and one 3'-dangling nucleotide are added. The energy unit is K/mol at 1M NaCl, pH 7 and 37 Celsius degrees.  The format in our website is: (difference of 5' end sense energy and 5' end antisense energy) (5' end sense energy, 5' end antisense energy). </p>
+<p>The above papers showed that it's antisense siRNAs that bind to RISC (RNA-induced silencing complex) during the silencing process. Because a positive score in the energy difference favors the sense strand to bind with RISC, it's not recommended for selection its siRNA. If you choose to sort by thermodynamic values, currently it ranks the thermodynamics by the energy difference. Although our website doesn't filter any siRNAs by energy, selecting siRNAs with positive energy difference is not recommended. Because there could be a threshold beyond which an siRNA is unusable, it's better to avoid a super stable end. An siRNA with one stable end and one super stable end might not be as good as one with one end much less stable and the other is a bit more stable.</p>
+
+
+<hr>
+*: Xia<i> et. al.</i>, 'Chapter 2. Thermodynamics of RNA Secondary Structure Formation' in RNA, ppp 21-48 
+</body>
+</html>
