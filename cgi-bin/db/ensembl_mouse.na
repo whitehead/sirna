@@ -1,0 +1,10 @@
+>gnl|ensembl|ENSMUST00000196221.2  cdna chromosome:GRCm39:14:54350925:54350933:1 gene:ENSMUSG00000096749.3 gene_biotype:TR_D_gene transcript_biotype:TR_D_gene gene_symbol:Trdd1 description:T cell receptor delta diversity 1 [Source:MGI Symbol;Acc:MGI:4439547]
+ATGGCATAT
+>gnl|ensembl|ENSMUST00000179664.2  cdna chromosome:GRCm39:14:54350925:54350935:1 gene:ENSMUSG00000096749.3 gene_biotype:TR_D_gene transcript_biotype:processed_transcript gene_symbol:Trdd1 description:T cell receptor delta diversity 1 [Source:MGI Symbol;Acc:MGI:4439547]
+ATGGCATATCA
+>gnl|ensembl|ENSMUST00000177564.2  cdna chromosome:GRCm39:14:54359683:54359698:1 gene:ENSMUSG00000096176.2 gene_biotype:TR_D_gene transcript_biotype:TR_D_gene gene_symbol:Trdd2 description:T cell receptor delta diversity 2 [Source:MGI Symbol;Acc:MGI:4439546]
+ATCGGAGGGATACGAG
+>gnl|ensembl|ENSMUST00000178537.2  cdna chromosome:GRCm39:6:41510135:41510146:1 gene:ENSMUSG00000095668.2 gene_biotype:TR_D_gene transcript_biotype:TR_D_gene gene_symbol:Trbd1 description:T cell receptor beta, D region 1 [Source:MGI Symbol;Acc:MGI:4439571]
+GGGACAGGGGGC
+>gnl|ensembl|ENSMUST00000178862.2  cdna chromosome:GRCm39:6:41519097:41519110:1 gene:ENSMUSG00000094569.2 gene_biotype:TR_D_gene transcript_biotype:TR_D_gene gene_symbol:Trbd2 description:T cell receptor beta, D region 2 [Source:MGI Symbol;Acc:MGI:4439727]
+GGGACTGGGGGGGC
