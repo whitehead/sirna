@@ -1,6 +1,6 @@
 # www directory from siRNA selection program (Whitehead Institute)
 
-#### Make /www/siRNAext directory, and copy all files below it.
+### Make /www/siRNAext directory, and copy all files below it.
 
 ### Selected contents that may need configuration:
 
