@@ -58,10 +58,14 @@ You can download full sets from the public databases with the scripts under bin 
 
 ### /cgi-bin/mysqldb -files for mysql databases
 
-xrefs for databases and put them into a mysql database named sirna2:
+You can create databases by loading .sql files using the following command:
 
-entrez_gene.sql: can be downloaded from ftp://ftp.ncbi.nlm.nih.gov/gene
+	mysql -u username -p < /path/to/your_file.sql
+ 
+**.sql Files:**
 
-sirna.sql: mysql defs for user database
+entrez_gene.sql: Creates the entrez_gene database. This file can be downloaded from NCBI's FTP site: ftp://ftp.ncbi.nlm.nih.gov/gene
 
-sirna2.sql: mysql defs for xref databases: link geneId with isoforms
+sirna.sql: Defines MySQL structure for the sirna user database, which you can create by loading this file.
+
+sirna2.sql: Provides MySQL definitions for the xref database, linking geneId with isoforms. This file is used to create the sirna2 database.
